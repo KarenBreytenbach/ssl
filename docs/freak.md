@@ -2,11 +2,11 @@
 
 The vulnerability dates back to the 1990s, when the US government banned selling crypto software overseas, unless it used export cipher suites which involved encryption keys no longer than 512-bits.
 
-The attack usses the fact that some modern browser clients had (and have on older version) a bug in them, where the bug caused the browser to accept export-grade RSA even if they did not request or broadcasted support. Allowing attackers to downgrade the level of security on a connection provided that the client is vulnerable and the server supports export RSA.
+The attack exploits the fact that some modern (or older) browser clients have bugs that cause the browser to accept export-grade RSA even if they did not request or broadcast support. This allows attackers to downgrade the level of security on a connection provided that the client is vulnerable and the server supports export-grade RSA.
 
 # How do I fix this ?
 
-Upgrade OPENSSL on the server along with negating the *EXPORT* cipher suite, a starting point for a list of safe ciphers would be:
+Upgrade OPENSSL on the server along with negating the *EXPORT* cipher suite. A starting point for a list of safe ciphers would be:
 
 ```EECDH+AESGCM:EDH+AESGCM:ECDHE-RSA-AES128-GCM-SHA256:AES256+EECDH:DHE-RSA-AES128-GCM-SHA256:AES256+EDH:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4
 ```
