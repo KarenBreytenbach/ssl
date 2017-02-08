@@ -1,18 +1,18 @@
-HTTPS has become a important part of keeping users safe on the web. With new tools/protocols (HTTPv2) that only operate over SSL the importance is clear.
+HTTPS has become an important part of keeping users safe on the web. With new tools/protocols (HTTPv2) that only operate over SSL the importance is clear.
 
-While not a issue per-say websites are recommended to look at enabling HTTPs for their users. This might not always be possible but should be strongly considered.
+While not an issue per se, websites are recommended to look at enabling HTTPs for their users. This might not always be possible but should be strongly considered.
 
-Search engines like Google have also been taking a interest by including SSL as a ranking signal in their algorithm. 
+Search engines like Google have also been taking an interest by including SSL as a ranking signal in their algorithm. 
 
 # How do I fix this ?
 
 There are 2 options here, both leading to HTTPS for your website.
 
-Option number 1 is that services like [cloudflare.com](https://cloudflare.com) offer SSL for free to all their customers. If you do not control the server (shared hosting) or simply looking for a quick generic fix this is a great (and quick) option.
+Option number 1 is that services like [cloudflare.com](https://cloudflare.com) offer SSL for free to all their customers. If you do not control the server (shared hosting) or are simply looking for a quick generic fix this is a great (and quick) option.
 
-Option number 2 is a bit more involved but will put you in control. That is buying a certificate from a SSL provider and enabling it in your web server config.
+Option number 2 is a bit more involved but will put you in control. That is buying a certificate from an SSL provider and enabling it in your web server config.
 
-Following these steps you'll come out above, we've provided more details information under "SSL certificates" while providing a quick overview here:
+Following these steps above, we've provided more detailed information under "SSL certificates" while providing a quick overview here:
 
 * Decide on the level of certificate you're domain/business requires. These include Domain Validated, Company Validated or Extended Validation.
 * Generate a private key that you'll keep private
@@ -40,7 +40,7 @@ provide less assurance to your customers.
 * **Company Validated / High Assurance**: A high assurance certificate is the normal type of certificate that is issued. There 
 are two things that must be verified before you can be issued a high assurance 
 certificate: ownership of the domain name and valid business registration. 
-Both of these items are listed on the certificate so visitors be be sure that 
+Both of these items are listed on the certificate, so visitors be be sure that 
 you are who you say you are. Because it requires manual validation, high
 assurance certificates can take an hour to a few days to be issued. These 
 certificates include the actual organization name and domain in the certificate.
@@ -58,7 +58,7 @@ Different organizations have different needs so selecting the correct type is im
 
 ### Step 2: Generate your Private Key
 
-[OpenSSL](http://www.openssl.org/) is a open source toolkit that is installed by default on most systems. It can be used to generate all the required keys you need.
+[OpenSSL](http://www.openssl.org/) is an open source toolkit that is installed by default on most systems. It can be used to generate all the required keys you need.
 
 To generate a private key with the name private_key.pem of 2048 bit, you would use the following command:
 
@@ -68,7 +68,7 @@ openssl genrsa -des3 -out private.key 2048
 
 ### Step 3: Create a Certificate Signing Request
 
-[OpenSSL](http://www.openssl.org/) is our toolkit of choice again. Using your private key we created in the first step us:
+[OpenSSL](http://www.openssl.org/) is our toolkit of choice again. Using your private key we created in the first step us (SOMETHING MISSING IN THIS SENTENCE):
 
 ````
 openssl req -new -key private.key -out request.csr
@@ -85,7 +85,7 @@ Head over to any of these well known SSL auhorities:
 
 ### Step 5: Configure Web Server
 
-Depending on your type of web server this config could differ. We tried to common the classics, namely **NGINX** and **Apache**.
+Depending on your type of web server this config could differ. We tried to common the classics, namely **NGINX** and **Apache**. (IS THIS RIGHT?)
 
 #### NGINX
 
@@ -116,7 +116,7 @@ SSLCertificateChainFile /path/to/DigiCertCA.crt
 
 #### Step 6: 
 
-Rest easy that your users are now more secure !
+Rest easy that your users are now more secure!
 
 # Resources
 
